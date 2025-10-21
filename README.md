@@ -8,7 +8,7 @@ https://the-trivia-api.com/v2/questions?limit=10
 ```
 
 
-Outputs:
+## Outputs:
 
 <img width="1884" height="1430" alt="image" src="https://github.com/user-attachments/assets/89791c88-d19b-42bb-95c4-fc098fbfffe5" />
 
