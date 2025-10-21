@@ -2,6 +2,11 @@
 1. Go to src folder
 2. click on app.jsx
 
+## I have used the Api: 
+```
+https://the-trivia-api.com/v2/questions?limit=10
+```
+
 
 Outputs:
 
