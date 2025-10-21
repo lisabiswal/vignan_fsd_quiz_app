@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-import "./App.css"
+// import "./App.css"
 export default function App() {
   const [datas, setDatas] = useState([])
   const [currQ, setCurrQ] = useState(null)
@@ -50,7 +50,9 @@ export default function App() {
   }
 
   return (
-    <div className="w-200 p-2 h-auto text-black bg-amber-50 m-auto">
+
+    <div className="m-20">
+    <div className="w-200  p-5 h-auto text-black border  m-auto">
       <h1 className="text-3xl text-center">Fsd Quiz App</h1>
       <div className="gap-120 mt-8">
         <div className="difficulty bg-green-700 w-60 h-10 text-white text-[19px] flex justify-center items-center p-2 rounded-2xl">
@@ -77,7 +79,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="submit">
+        <div className="submit flex justify-center">
           <button 
             onClick={handleNext}
             className="w-45 cursor-pointer active:scale-95 h-auto py-1 mt-10 rounded-2xl text-[20px] bg-amber-600"
@@ -86,6 +88,7 @@ export default function App() {
           </button>
         </div>
       </div>
+    </div>
     </div>
   )
 }
