@@ -4,6 +4,7 @@ import "./App.css"
 export default function App() {
   const [datas, setDatas] = useState([])
   const [currQ, setCurrQ] = useState(null)
+  const [answer, setAnswer] = useState("")
 
   const URL = "https://the-trivia-api.com/v2/questions?limit=10"
 
@@ -34,6 +35,11 @@ export default function App() {
       setCurrQ(datas[randomIndex])
     }
   }
+  function getOpt(e){
+    let val = e.target.innerText;
+    setAnswer(val)
+    console.log(e.target.innerText)
+  }
 
   if (!currQ) {
     return (
@@ -60,10 +66,10 @@ export default function App() {
           <div className="grid grid-cols-2 grid-rows-2 gap-4">
             {currQ.incorrectAnswers && currQ.incorrectAnswers.length > 0 ? (
               <>
-                <div className="bg-gray-200 p-4 rounded text-center">{currQ.correctAnswer}</div>
-                <div className="bg-gray-200 p-4 rounded text-center">{currQ.incorrectAnswers[0]}</div>
-                <div className="bg-gray-200 p-4 rounded text-center">{currQ.incorrectAnswers[1]}</div>
-                <div className="bg-gray-200 p-4 rounded text-center">{currQ.incorrectAnswers[2]}</div>
+                <div className={`p-4 rounded text-center ${answer === currQ.correctAnswer ? 'bg-green-600': 'bg-gray-200'}`} onClick={getOpt}>{currQ.correctAnswer}</div>
+                <div className={`p-4 rounded text-center ${answer === currQ.correctAnswer ? 'bg-red-600': 'bg-gray-200'}`} onClick={getOpt}>{currQ.incorrectAnswers[0]}</div>
+                <div className={`p-4 rounded text-center ${answer === currQ.correctAnswer ? 'bg-red-600': 'bg-gray-200'}`} onClick={getOpt}>{currQ.incorrectAnswers[1]}</div>
+                <div className={`p-4 rounded text-center ${answer === currQ.correctAnswer ? 'bg-red-600': 'bg-gray-200'}`} onClick={getOpt}>{currQ.incorrectAnswers[2]}</div>
               </>
             ) : (
               <div className="col-span-2">Loading options...</div>
