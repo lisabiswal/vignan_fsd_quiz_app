@@ -1,3 +1,7 @@
+## To access the code for writting in the record:
+1. Go to src folder
+2. click on app.jsx
+
 
 Outputs:
 
